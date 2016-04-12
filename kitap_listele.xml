@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ns1="http://tempuri.org/">
+  <SOAP-ENV:Body>
+    <ns1:KitapListele>
+      <ns1:firmaId>%firmaId%</ns1:firmaId>
+      <ns1:ip>%ip%</ns1:ip>
+      <ns1:tarih>%tarih%</ns1:tarih>
+      <ns1:ilkIndeks>%ilkIndeks%</ns1:ilkIndeks>
+      <ns1:adet>%adet%</ns1:adet>
+    </ns1:KitapListele>
+  </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>
