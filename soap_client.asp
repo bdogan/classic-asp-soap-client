@@ -28,6 +28,7 @@ Class oSoapClient
 		UTF82TR_Data = Replace(UTF82TR_Data ,"Ãœ","Ü",1,-1,0)
 		UTF82TR_Data = Replace(UTF82TR_Data ,"Ã‡","Ç",1,-1,0)
 		UTF82TR_Data = Replace(UTF82TR_Data ,"Ä°","Ý",1,-1,0)
+		UTF82TR_Data = Replace(UTF82TR_Data ,"Ã®","i",1,-1,0)
 		UTF82TR_Data = Replace(UTF82TR_Data ,"Ã–","Ö",1,-1,0)
 		UTF82TR_Data = Replace(UTF82TR_Data ,"Ã¼","ü",1,-1,0)
 		UTF82TR_Data = Replace(UTF82TR_Data ,"ÅŸ","þ",1,-1,0)
@@ -35,6 +36,14 @@ Class oSoapClient
 		UTF82TR_Data = Replace(UTF82TR_Data ,"Ã§","ç",1,-1,0)
 		UTF82TR_Data = Replace(UTF82TR_Data ,"Ä±","ý",1,-1,0)
 		UTF82TR_Data = Replace(UTF82TR_Data ,"Ã¶","ö",1,-1,0)
+		UTF82TR_Data = Replace(UTF82TR_Data ,"Ã¢","a",1,-1,0)
+		UTF82TR_Data = Replace(UTF82TR_Data ,"Ã»","u",1,-1,0)
+		UTF82TR_Data = Replace(UTF82TR_Data ,"Åž","Þ",1,-1,0)
+		UTF82TR_Data = Replace(UTF82TR_Data ,"Äž","Ð",1,-1,0)
+		UTF82TR_Data = Replace(UTF82TR_Data ,"â€¦","...",1,-1,0)
+		UTF82TR_Data = Replace(UTF82TR_Data ,"â€“","-",1,-1,0)
+		UTF82TR_Data = Replace(UTF82TR_Data ,"â€™","’",1,-1,0)
+		UTF82TR_Data = Replace(UTF82TR_Data ,"â€œ","“",1,-1,0)
 		Utf8Decode = UTF82TR_Data
 	End Property
 
