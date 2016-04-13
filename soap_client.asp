@@ -1,6 +1,12 @@
 <%
 Class oSoapClient
 
+	Private pregEx
+	Public Property Get regEx
+		If (IsEmpty(pRegEx)) Then Set pRegEx = New RegExp
+		Set regEx = pRegEx
+	End Property
+
 	Private Property Get FileGetContents(strFile)
 		Dim pFSO : Set pFSO = Server.CreateObject("Scripting.FileSystemObject")
 		Dim objFile : Set objFile = pFSO.OpenTextFile(strFile, 1)
@@ -40,11 +46,27 @@ Class oSoapClient
 		UTF82TR_Data = Replace(UTF82TR_Data ,"Ã»","u",1,-1,0)
 		UTF82TR_Data = Replace(UTF82TR_Data ,"Åž","Þ",1,-1,0)
 		UTF82TR_Data = Replace(UTF82TR_Data ,"Äž","Ð",1,-1,0)
-		UTF82TR_Data = Replace(UTF82TR_Data ,"â€¦","...",1,-1,0)
+		
+		UTF82TR_Data = Replace(UTF82TR_Data ,"â€¦","…",1,-1,0)
 		UTF82TR_Data = Replace(UTF82TR_Data ,"â€“","-",1,-1,0)
 		UTF82TR_Data = Replace(UTF82TR_Data ,"â€™","’",1,-1,0)
 		UTF82TR_Data = Replace(UTF82TR_Data ,"â€œ","“",1,-1,0)
+		UTF82TR_Data = Replace(UTF82TR_Data ,"â€?","”",1,-1,0)
+		UTF82TR_Data = Replace(UTF82TR_Data ,"â€z","„",1,-1,0)
+		UTF82TR_Data = Replace(UTF82TR_Data ,"Â·","·",1,-1,0)
+		UTF82TR_Data = Replace(UTF82TR_Data ,"Ã‚","Â",1,-1,0)
+		UTF82TR_Data = RegexReplace("Â.", UTF82TR_Data, "")
 		Utf8Decode = UTF82TR_Data
+	End Property
+	
+	Public Property Get RegexReplace(ByRef pRegEx, ByRef pHaystack, ByRef pNeedle)
+		With regEx
+			.Pattern = pRegEx
+			.IgnoreCase = True
+			.Global = True
+			.MultiLine = True
+		End With
+		RegexReplace = regEx.Replace(pHaystack, pNeedle)
 	End Property
 
 	Private Property Get BinaryToString(Binary)
